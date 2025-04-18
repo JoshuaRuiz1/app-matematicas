@@ -1,4 +1,4 @@
-name: CI con SonarCloud
+name: CI con SonarCloud FIXED
 
 on: [push]
 
@@ -16,10 +16,16 @@ jobs:
       - name: Instalar SonarScanner
         run: dotnet tool install --global dotnet-sonarscanner
 
-      - name: Ejecutar SonarCloud
+      - name: Analizar código
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          dotnet sonarscanner begin /k:"JoshuaRuiz1_app-matematicas" /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+          dotnet sonarscanner begin \
+          /k:"JoshuaRuiz1_app-matematicas" \
+          /o:"JoshuaRuiz1" \  # <-- ¡Aquí va tu nombre SIN "-github"!
+          /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
+          /d:sonar.host.url="https://sonarcloud.io"
+          
           dotnet build
+          
           dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
