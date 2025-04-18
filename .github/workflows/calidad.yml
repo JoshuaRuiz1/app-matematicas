@@ -28,21 +28,8 @@ jobs:
         dotnet workload install maui
         dotnet workload install maui-windows
 
-    - name: SonarCloud Prep
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: |
-        dotnet tool install --global dotnet-sonarscanner
-        dotnet sonarscanner begin /k:"${{ env.SONAR_PROJECT_KEY }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
-
     - name: Build & Test
       run: |
         dotnet restore
         dotnet build --configuration Release
         dotnet test
-
-    - name: SonarCloud Finish
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: |
-        dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
