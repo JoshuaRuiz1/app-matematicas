@@ -14,7 +14,9 @@ jobs:
           dotnet-version: '9.0.x'
 
       - name: Instalar SonarScanner
-        run: dotnet tool install --global dotnet-sonarscanner --version=5.13.0
+        run: |
+          dotnet tool install --global dotnet-sonarscanner --version=5.13.0
+          mkdir -p .sonarqube/conf  # ¡Esta línea es clave!
 
       - name: Ejecutar SonarCloud
         env:
