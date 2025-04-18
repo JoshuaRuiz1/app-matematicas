@@ -1,0 +1,48 @@
+name: CI/CD MAUI - Análisis de Calidad
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  DOTNET_VERSION: '9.0.x'
+  SONAR_PROJECT_KEY: JoshuaRuiz1_app-matematicas
+
+jobs:
+  build-and-analyze:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Install MAUI Workloads
+      run: |
+        dotnet workload install maui
+        dotnet workload install maui-windows
+
+    - name: SonarCloud Prep
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: |
+        dotnet tool install --global dotnet-sonarscanner
+        dotnet sonarscanner begin /k:"${{ env.SONAR_PROJECT_KEY }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+
+    - name: Build & Test
+      run: |
+        dotnet restore
+        dotnet build --configuration Release
+        dotnet test
+
+    - name: SonarCloud Finish
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: |
+        dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
