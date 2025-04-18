@@ -1,4 +1,4 @@
-name: CI con SonarCloud FIXED
+name: CI con SonarCloud FUNCIONA
 
 on: [push]
 
@@ -20,12 +20,6 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          dotnet sonarscanner begin \
-          /k:"JoshuaRuiz1_app-matematicas" \
-          /o:"JoshuaRuiz1" \  # <-- ¡Aquí va tu nombre SIN "-github"!
-          /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
-          /d:sonar.host.url="https://sonarcloud.io"
-          
+          dotnet sonarscanner begin /k:"JoshuaRuiz1_app-matematicas" /o:"JoshuaRuiz1" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build
-          
           dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
