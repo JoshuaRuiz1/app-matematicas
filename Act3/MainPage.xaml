@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Act3.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="10,0"
+            Spacing="10"
+            BackgroundColor="White">
+            
+            <Label Text="INSTITUTO TECNOLOGICO DE TIJUANA"
+                    TextColor="Blue"
+                    FontSize="15"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    FontFamily="Verdana"/>
+
+            <Label Text="DESARROLLO DE APLICACIONES PARA DISPOSITIVOS MOVILES"
+                    TextColor="Blue"
+                    FontSize="10"
+                    HorizontalOptions="Center"/>
+
+            <Label Text="No Control: 21212363"
+                   TextColor="Black"
+                   FontSize="15"
+                   FontAttributes="Italic"/>
+
+            <Label Text="Alumno: Ruiz Lopez Joshua Isaias"
+                    TextColor="Black"
+                    FontSize="15"
+                    FontAttributes="Italic"/>
+
+            <Image Source="suma.jpg"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   HorizontalOptions="Center"/>
+
+            <Button Text="Ejecutar Suma"
+                    x:Name="btnsuma"
+                    Clicked="Formasuma"
+                    TextColor="Green"
+                    BackgroundColor="Black"
+                    FontAttributes="Bold"/>
+
+            <Image Source="resta.png"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   HorizontalOptions="Center"/>
+
+            <Button Text="Ejecutar Resta"
+                    x:Name="btnresta"
+                    Clicked="Formaresta"
+                    TextColor="Green"
+                    BackgroundColor="Black"
+                    FontAttributes="Bold"/>
+
+            <Image Source="multi.png"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   HorizontalOptions="Center"/>
+
+            <Button Text="Ejecutar Multiplicacion"
+                    x:Name="btnmultiplicacion"
+                    Clicked="Formamultiplicar"
+                    TextColor="Green"
+                    BackgroundColor="Black"
+                    FontAttributes="Bold"/>
+
+            <Image Source="divi.jpg"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   HorizontalOptions="Center"/>
+
+            <Button Text="Ejecutar Division"
+                    x:Name="btndivision"
+                    Clicked="Formadivision"
+                    TextColor="Green"
+                    BackgroundColor="Black"
+                    FontAttributes="Bold"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

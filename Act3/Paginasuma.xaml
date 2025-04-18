@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Act3.Paginasuma"
+             Title="Paginasuma">
+    <VerticalStackLayout>
+        <Label Text="TECNOLOGICO NACIONAL DE MEXICO"
+            TextColor="Blue"
+            FontSize="15"
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            FontFamily="Verdana"/>
+
+        <Label Text="Instituto Tecnologico de Tijuana"
+            TextColor="Blue"
+            FontSize="10"
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            FontFamily="Verdana"/>
+
+        <Label Text="DESARROLLO DE APLICAACIONES PARA DISPOSITIVOS MOVILES"
+            TextColor="Blue"
+            FontSize="5"
+            HorizontalOptions="Center"/>
+
+        <Label Text="No Control: 21212363"
+            TextColor="Black"
+            FontSize="15"
+            FontAttributes="Italic"/>
+
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Alumno: "
+                          TextColor="Black"
+                          FontAttributes="Bold"
+                          FontSize="15"/>
+                    <Span Text="Joshua Isaias Ruiz Lopez"
+                          TextColor="Black"
+                          FontSize="15"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Image Source="suma.jpg"
+           HeightRequest="100"
+           WidthRequest="100"
+           HorizontalOptions="Center"/>
+
+        <!--<Label Text="Escribe un numero:"
+            TextColor="Black"
+            FontSize="15"
+            FontAttributes="Italic"/>
+
+        <Entry Placeholder="Clic Aqui"
+            x:Name="txtn1"
+            Keyboard="Numeric"
+            TextColor="Green"/>
+
+        <Label Text="Escribe un numero:"
+            TextColor="Black"
+            FontSize="15"
+            FontAttributes="Italic"/>
+
+        <Entry Placeholder="Clic Aqui"
+            x:Name="txtn2"
+            Keyboard="Numeric"
+            TextColor="Green"/>
+
+        <Button Text="Calcular"
+             x:Name="btncalcular"
+             Clicked="Eventosumar"
+             TextColor="Green"
+             BackgroundColor="Black"
+             FontAttributes="Bold"
+             FontFamily="Comic Sans MS"
+             FontSize="20"/>
+
+        <Label Text="El resultado de la suma es:"
+            TextColor="Black"
+            FontSize="15"
+            FontAttributes="Italic"/>
+
+        <Entry Placeholder="Clic Aqui"
+            x:Name="txtresultado"
+            Keyboard="Numeric"
+            TextColor="Green"/>
+
+        <Button Text="Regresar"
+             x:Name="btnregresar"
+             Clicked="Eventoregresar"
+             TextColor="Green"
+             BackgroundColor="Black"
+             FontAttributes="Bold"
+             FontFamily="Comic Sans MS"
+             FontSize="20"/>
+
+        <Button Text="Nueva Operacion"
+            x:Name="btnueva"
+            Clicked="Nuevaoperacion"
+            TextColor="Green"
+            BackgroundColor="Black"
+            FontAttributes="Bold"
+            FontFamily="Comic Sans RS"
+            FontSize="20"/>-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0"
+                   Text="Introduce un numero: "
+                   TextColor="Blue"
+                   VerticalOptions="Center"/>
+            <Entry Grid.Row="0" Grid.Column="1"
+                   Placeholder="Clic Aqui"
+                   x:Name="txtn1"
+                   Keyboard="Numeric"
+                   TextColor="Blue"/>
+            <Label Grid.Row="1" Grid.Column="0"
+                   Text="Introduce otro numero: "
+                   TextColor="Blue"
+                   VerticalOptions="Center"/>
+            <Entry Grid.Row="1" Grid.Column="1"
+                   Placeholder="Clic Aqui"
+                   x:Name="txtn2"
+                   Keyboard="Numeric"
+                   TextColor="Blue"/>
+            <Button Text="Calcular"
+                    Grid.Row="2" Grid.Column="0"
+                   x:Name="btncalcular"
+                   Clicked="Eventosumar"
+                   TextColor="Green"
+                   BackgroundColor="Black"
+                   FontAttributes="Bold"
+                   FontFamily="Comic Sans MS"
+                   FontSize="20"/>
+            <Label Grid.Row="3" Grid.Column="0"
+                   Text="El resultado de la suma es: "
+                   TextColor="Blue"
+                   VerticalOptions="Center"/>
+            <Entry Grid.Row="3" Grid.Column="1"
+                   Placeholder="Clic Aqui"
+                   x:Name="txtresultado"
+                   Keyboard="Numeric"
+                   TextColor="Blue"/>
+            <Label Grid.Row="4" Grid.Column="0"
+                     Text="El Resultado De La Resta: "
+                     TextColor="Blue"
+                     VerticalOptions="Center"/>
+            <Entry Grid.Row="4" Grid.Column="1"
+                     Placeholder="Clic Aqui"
+                     x:Name="txtresultadoresta"
+                     Keyboard="Numeric"
+                     TextColor="Blue"/>
+            <Label Grid.Row="5" Grid.Column="0"
+                     Text="El resultado de la multiplicacion es: "
+                     TextColor="Blue"
+                     VerticalOptions="Center"/>
+            <Entry Grid.Row="5" Grid.Column="1"
+                     Placeholder="Clic Aqui"
+                     x:Name="txtresultadomulti"
+                     Keyboard="Numeric"
+                     TextColor="Blue"/>
+            <Label Grid.Row="6" Grid.Column="0"
+                     Text="El resultado de la division es: "
+                     TextColor="Blue"
+                     VerticalOptions="Center"/>
+            <Entry Grid.Row="6" Grid.Column="1"
+                     Placeholder="Clic Aqui"
+                     x:Name="txtresultadodivi"
+                     Keyboard="Numeric"
+                     TextColor="Blue"/>
+            <Button Grid.Row="8" Grid.Column="0"
+                    Text="Nueva Operacion"
+                    x:Name="btnnueva"
+                    Clicked="Nuevaoperacion"
+                    TextColor="Green"
+                    BackgroundColor="White"
+                    FontAttributes="Bold"
+                    FontFamily="Comic Sans MS"
+                    FontSize="20"
+                    WidthRequest="200"
+                    HeightRequest="20"/>
+            
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
+
+    

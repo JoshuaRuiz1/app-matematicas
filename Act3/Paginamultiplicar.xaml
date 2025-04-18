@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Act3.Paginamultiplicar"
+             Title="Paginamultiplicar">
+    <VerticalStackLayout>
+        <Label Text="TECNOLOGICO NACIONAL DE MEXICO"
+            TextColor="Blue"
+            FontSize="15"
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            FontFamily="Verdana"/>
+
+        <Label Text="Instituto Tecnologico de Tijuana"
+            TextColor="Blue"
+            FontSize="10"
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            FontFamily="Verdana"/>
+
+        <Label Text="DESARROLLO DE APLICACIONES PARA DISPOSITIVOS MOVILES"
+            TextColor="Blue"
+            FontSize="5"
+            HorizontalOptions="Center"/>
+
+        <Label Text="No Control: 21212363"
+            TextColor="Black"
+            FontSize="15"
+            FontAttributes="Italic"/>
+
+        <Label Text="Alumno: Ruiz Lopez Joshua Isaias"
+            TextColor="Black"
+            FontSize="15"
+            FontAttributes="Italic"/>
+
+        <Image Source="multi.png"
+           HeightRequest="100"
+           WidthRequest="100"
+           HorizontalOptions="Center"/>
+
+        <Label Text="Escribe un numero:"
+            TextColor="Black"
+            FontSize="15"
+            FontAttributes="Italic"/>
+
+        <Entry Placeholder="Clic Aqui"
+            x:Name="txtn1"
+            Keyboard="Numeric"
+            TextColor="Green"/>
+
+        <Label Text="Escribe un numero:"
+            TextColor="Black"
+            FontSize="15"
+            FontAttributes="Italic"/>
+
+        <Entry Placeholder="Clic Aqui"
+            x:Name="txtn2"
+            Keyboard="Numeric"
+            TextColor="Green"/>
+
+        <Button Text="Calcular"
+             x:Name="btncalcular"
+             Clicked="Eventomultiplicar"
+             TextColor="Green"
+             BackgroundColor="Black"
+             FontAttributes="Bold"
+             FontFamily="Comic Sans MS"
+             FontSize="20"/>
+
+        <Label Text="El resultado de la multiplicacion es:"
+            TextColor="Black"
+            FontSize="15"
+            FontAttributes="Italic"/>
+
+        <Entry Placeholder="Clic Aqui"
+            x:Name="txtresultadomulti"
+            Keyboard="Numeric"
+            TextColor="Green"/>
+
+        <Button Text="Regresar"
+             x:Name="btnregresar"
+             Clicked="Eventoregresar"
+             TextColor="Green"
+             BackgroundColor="Black"
+             FontAttributes="Bold"
+             FontFamily="Comic Sans MS"
+             FontSize="20"/>
+
+        <Button Text="Nueva Operacion"
+            x:Name="btnueva"
+            Clicked="Nuevaoperacion"
+            TextColor="Green"
+            BackgroundColor="Black"
+            FontAttributes="Bold"
+            FontFamily="Comic Sans RS"
+            FontSize="20"/>
+    </VerticalStackLayout>
+</ContentPage>
