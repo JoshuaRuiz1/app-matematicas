@@ -1,4 +1,4 @@
-name: CI con SonarCloud FUNCIONA
+name: CI con SonarCloud FIXED
 
 on: [push]
 
@@ -14,9 +14,9 @@ jobs:
           dotnet-version: '9.0.x'
 
       - name: Instalar SonarScanner
-        run: dotnet tool install --global dotnet-sonarscanner
+        run: dotnet tool install --global dotnet-sonarscanner --version=5.13.0
 
-      - name: Analizar código
+      - name: Ejecutar SonarCloud
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
