@@ -1,0 +1,26 @@
+name: CI - MAUI App (.NET 9)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Clonar el repositorio
+      uses: actions/checkout@v3
+
+    - name: Instalar .NET 9 y workloads de MAUI
+      run: |
+        dotnet workload install maui
+        dotnet workload install maui-windows
+
+    - name: Restaurar dependencias
+      run: dotnet restore Act3.sln
+
+    - name: Compilar el proyecto
+      run: dotnet build Act3.sln --configuration Release

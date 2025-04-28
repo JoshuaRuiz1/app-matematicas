@@ -1,0 +1,28 @@
+name: SonarCloud FIX 100%
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: PREPARAR SONARSCANNER (KEY STEP)
+        run: |
+          mkdir -p .sonarqube/conf
+          echo "<SonarQubeAnalysisConfig />" > .sonarqube/conf/SonarQubeAnalysisConfig.xml
+          dotnet tool install --global dotnet-sonarscanner --version=5.13.0
+
+      - name: ANALIZAR CON SONARCLOUD
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          dotnet sonarscanner begin /k:"JoshuaRuiz1_app-matematicas" /o:"JoshuaRuiz1" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet build --no-incremental
+          dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
